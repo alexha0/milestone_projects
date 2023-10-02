@@ -33,9 +33,25 @@ NOTE: Please use datasets available in the PHW251 Project Data github repo Links
 data_chhs<-data_chhs%>% mutate(across(c(col3, col4, col5),as.numeric))
 
 #Document the import process
-+
++In this script, we perform the following steps:
+1. Load the required libraries: 
+    - 'readxl' for reading Excel files.
+    - 'dplyr' for data manipulation.
 
-#Clean up column names (recommend using snake case, which is lower case text with underscores between words)
+2. Import the data dictionary from an Excel file ('calenviroscreen_datadictionary.xlsx') using 'read_xlsx' function 
+from the 'readxl' package. This data dictionary will help us understand the structure and meaning of the columns in our data.
+
+3. View the imported data dictionary using the 'View' function.
+
+4. Import the CHHS asthma data from a CSV file ('chhs_asthma_ed.csv') using 'read.csv' function.
+This dataset contains information related to asthma cases.
+
+5. View the imported CHHS asthma data using the 'View' function.
+
+6. Convert specific columns in the CHHS asthma data to numeric type using the 'mutate' function from the 'dplyr' package.
+  We convert the 'STRATA', 'STRATA NAME', 'AGE GROUP', 'col3', 'col4', and 'col5' columns to numeric.
+
+Clean up column names (recommend using snake case, which is lower case text with underscores between words)
 +data_chhs<-rename("country" = "COUNTY", "year" = "YEAR","strata" = "STRATA","Strata_name" = "STRATA NAME","age_group" = "AGE GROUP", "number_ed_visit" = "NUMBER OF ED VISITS", "age_ajusted_ed_visit_rate" = "AGE-ADJUSTED ED VISIT RATE")
 +head(data_chhs)
 
@@ -69,3 +85,23 @@ data_chhs<-data_chhs%>% mutate(across(c(col3, col4, col5),as.numeric))
 
 
 +Provide a basic description of the 5+ data elements
+
+country
+Data Type: Character
+Desired Type/Format: Character
+
+age_group
+Data Type: Numeric
+Desired Type/Format: Numeric
+
+number_ed_visit
+Data Type: Numeric
+Desired Type/Format: Numeric
+
+age_ajusted_ed_visit_rate
+Data Type: Numeric
+Desired Type/Format: Numeric
+
+strata
+Data Type: Numeric
+Desired Type/Format: Numeric (conversion needed)
