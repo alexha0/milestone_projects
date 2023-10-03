@@ -17,15 +17,15 @@ NOTE: Please use datasets available in the PHW251 Project Data github repo Links
 
 #Use appropriate import function and package based on the type of file
 +data_dictionary<- read::xlsx("scenario_3/calenviroscreen_datadictionary.xlsx")
-+view(data_dictionary)
++head(data_dictionary)
 +data_chhs<-read.csv("scenario_3/chhs_asthma_ed.csv")
-+view(data_chhs)
++head(data_chhs)
 
 #Use appropriate import function and package based on the type of file
 +data_dictionary<- read::xlsx("scenario_3/calenviroscreen_datadictionary.xlsx")
-+view(data_dictionary)
++head(data_dictionary)
 +data_chhs<-read.csv("scenario_3/chhs_asthma_ed.csv")
-+view(data_chhs)
++head(data_chhs)
 
 #Utilize function arguments to control relevant components (i.e. change column types, column names, missing values, etc.)
 +library(dplyr)
@@ -36,6 +36,7 @@ data_chhs<-data_chhs%>% mutate(across(c(col3, col4, col5),as.numeric))
 +In this script, we perform the following steps:
 1. Load the required libraries: 
     - 'readxl' for reading Excel files.
+    - 'read.csv' for the csv files
     - 'dplyr' for data manipulation.
 
 2. Import the data dictionary from an Excel file ('calenviroscreen_datadictionary.xlsx') using 'read_xlsx' function 
